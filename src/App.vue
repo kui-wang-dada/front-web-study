@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <a-layout class="layout">
+      <a-layout-header><HeaderTop></HeaderTop></a-layout-header>
+
+      <a-layout-content>
+        <router-view></router-view>
+      </a-layout-content>
+
+      <a-layout-footer>Footer</a-layout-footer>
+    </a-layout>
   </div>
 </template>
+<script>
+import HeaderTop from '@/components/HeaderTop.vue';
+export default {
+  components: { HeaderTop }
+};
+</script>
 
 <style>
 #app {
@@ -15,6 +25,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
 }
 
 #nav {
